@@ -9,3 +9,6 @@ def test_single_number():
     calc = StringCalculator()
     assert calc.add("5") == 5
 
+def test_two_numbers():
+    calc = StringCalculator()
+    assert calc.add("1,2") == 3
