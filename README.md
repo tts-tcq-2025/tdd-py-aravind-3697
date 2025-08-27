@@ -33,3 +33,17 @@ Start Test-driven approach
 1. Write the smallest possible failing test: give input `"" assert output to be 0 ` .
 2. Write the minimum amount of code that'll make it pass.
 3. Refactor any assumptions, continue to pass this test. Do not add any code without a corresponding test.
+
+## Summary of Requirements
+
+1. In case of Empty string "" → return 0.
+2. In case of Single number (Eg. : "1") → return the same single number (Expected Result from Eg. return 1 ).
+3. For Two numbers (Eg. "1,2") → return sum of two numbers (Expected sum from example : 3 ).
+4. Incase of Unknown number of entries → sum them all.
+5. If there's a Newline (\n), this can also separate numbers. (Eg. "1\n2,3" → It should return 6) .
+6. Custom delimiter support:
+      Expected in Format: "//[delimiter]\n[numbers]", (Eg. "//;\n1;2" → 3).
+      Delimiters can also be multiple characters: (Eg. "//[***]\n1***2***3" → 6 ).
+7. Incase of Negative numbers, it should throw an exception saying "negatives not allowed: <negatives>".
+8. If the Numbers are greater than 1000, then ignore.
+9. Overall the code should maintain low complexity and high test coverage.
