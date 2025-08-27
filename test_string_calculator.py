@@ -31,6 +31,11 @@ def test_negative_numbers():
         calc.add("1,-2,-3")
     assert "negatives not allowed: -2,-3" in str(exc.value)
 
+def test_ignore_numbers_over_1000():
+    calc = StringCalculator()
+    assert calc.add("2,1001") == 2
+
+
 
 
 
