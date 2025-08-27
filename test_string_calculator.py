@@ -25,5 +25,12 @@ def test_custom_delimiter():
     calc = StringCalculator()
     assert calc.add("//;\n1;2") == 3
 
+def test_negative_numbers():
+    calc = StringCalculator()
+    with pytest.raises(ValueError) as exc:
+        calc.add("1,-2,-3")
+    assert "negatives not allowed: -2,-3" in str(exc.value)
+
+
 
 
