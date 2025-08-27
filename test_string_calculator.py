@@ -17,3 +17,8 @@ def test_multiple_numbers():
     calc = StringCalculator()
     assert calc.add("1,2,3,4") == 10
 
+def test_newline_as_delimiter():
+    calc = StringCalculator()
+    assert calc.add("1\n2,3") == 6
+
+
