@@ -2,7 +2,7 @@
 
 # 🧮 TDD-Driven String Calculator
 
-A Python implementation of the **String Calculator Kata**, developed strictly using **Test-Driven Development (TDD)**.  
+A Python implementation of the **String Calculator**, developed strictly using **Test-Driven Development (TDD)**.  
 The project emphasizes clean design, incremental development, and strong quality gates (coverage, complexity, duplication).
 
 ---
@@ -27,6 +27,59 @@ The project emphasizes clean design, incremental development, and strong quality
   - `"2,1001"` → `2`
 
 ---
+
+## GHERKIN based scenarios (Based on Requirements)
+
+- **Feature: String Calculator**
+-     As a user, I want to add numbers from a string input. So that I can get their sum while supporting custom delimiters, newlines, and validation rules
+- Background:
+-     Given a StringCalculator instance
+
+- **Scenario 1: Add an empty string**.
+  `Given the input string is ""
+   When I call add()
+   Then the result should be 0.`
+
+- **Scenario 2: Add a single number**
+  `Given the input string is "5"
+   When I call add()
+   Then the result should be 5`
+
+- **Scenario 3: Add two numbers separated by a comma**
+   `Given the input string is "1,2"
+    When I call add()
+    Then the result should be 3`
+
+- **Scenario 4: Add multiple numbers**
+   `Given the input string is "1,2,3,4"
+    When I call add()
+    Then the result should be 10`
+
+- **Scenario 5: Support newline as delimiter**
+   `Given the input string is "1\n2,3"
+    When I call add()
+    Then the result should be 6`
+
+- **Scenario 6: Use a custom single-character delimiter**
+   `Given the input string is "//;\n1;2;3"
+    When I call add()
+    Then the result should be 6`
+
+- **Scenario 7: Use a custom multi-character delimiter**
+   `Given the input string is "//[***]\n1***2***3"
+    When I call add()
+    Then the result should be 6`
+
+- **Scenario 8: Ignore numbers greater than 1000**
+   `Given the input string is "2,1001"
+    When I call add()
+    Then the result should be 2`
+
+- **Scenario 9: Raise exception for negative numbers**
+   `Given the input string is "-1,2,-3"
+    When I call add()
+    Then a ValueError should be raised with message "negatives not allowed: -1,-3"`
+
 
 ## 2️⃣ Features Implemented
 
