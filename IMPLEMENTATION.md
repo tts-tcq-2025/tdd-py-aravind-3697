@@ -162,7 +162,8 @@ Each feature was introduced only after a test demanded it.
         - limit-complexity.yml – CCN enforcement
         - no-dups.yml – duplicate code check
         - lint.yml – linting rules
-- README.md – documentation (this file)
+- README.md – documentation of requirements with details.
+- IMPLEMENTATION.md – Detailed technical documentation of implementation (this file).
 
 
     
