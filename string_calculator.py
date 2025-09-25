@@ -19,8 +19,8 @@ class StringCalculator:
 
     def _parse_header(self, header: str) -> str:
         if header.startswith("//[") and header.endswith("]"):
-            return header[3:-1]  # multi-character delimiter
-        return header[2:]        # single-character delimiter
+            return header[3:-1]  
+        return header[2:]        
 
     def _split_numbers(self, numbers: str, delimiter: str) -> list[str]:
         return numbers.replace(delimiter, ",").replace("\n", ",").split(",")
