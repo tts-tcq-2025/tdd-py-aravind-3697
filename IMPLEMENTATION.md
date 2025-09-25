@@ -9,22 +9,18 @@ The project emphasizes clean design, incremental development, and strong quality
 
 ## 1️⃣ Test Specifications (Based on Requirements)
 
-- **Empty string** → returns `0`
-- **Single number** → returns that number  
-  - `"1"` → `1`
-- **Two numbers** → returns their sum  
-  - `"1,2"` → `3`
-- **Unknown number of numbers** → sums them all  
-  - `"1,2,3,4"` → `10`
-- **Newlines allowed as delimiters**  
-  - `"1\n2,3"` → `6`
-- **Custom delimiters supported**  
-  - `"//;\n1;2"` → `3`  
-  - `"//[***]\n1***2***3"` → `6`
-- **Negative numbers not allowed**  
-  - `"1,-2,-3"` → raises `ValueError("negatives not allowed: -2,-3")`
-- **Numbers greater than 1000 are ignored**  
-  - `"2,1001"` → `2`
+| Test Case ID | Description                            | Given Input            | When Action          | Expected Outcome                                    |
+| ------------ | -------------------------------------- | ---------------------- | -------------------- | --------------------------------------------------- |
+| TC001        | Empty String Input                     | `""`                   | Calculator is called | Result should be `0`                                |
+| TC002        | Single Number Input                    | `"1"`                  | Calculator is called | Result should be `1`                                |
+| TC003        | Two Number Input (Comma Separated)     | `"1,2"`                | Calculator is called | Result should be `3`                                |
+| TC004        | Multiple Numbers Input                 | `"1,2,3,4"`            | Calculator is called | Result should be `10`                               |
+| TC005        | Newline as Delimiter                   | `"1\n2,3"`             | Calculator is called | Result should be `6`                                |
+| TC006        | Custom Single-Character Delimiter      | `"//;\n1;2"`           | Calculator is called | Result should be `3`                                |
+| TC007        | Custom Multi-Character Delimiter       | `"//[***]\n1***2***3"` | Calculator is called | Result should be `6`                                |
+| TC008        | Ignore Numbers Greater than 1000       | `"2,1001"`             | Calculator is called | Result should be `2`                                |
+| TC009        | Negative Numbers Raise Exception       | `"1,-2,-3"`            | Calculator is called | Raises `ValueError("negatives not allowed: -2,-3")` |
+| TC010        | Mixed Valid, Large, and Negative Input | `"2,-5,1001,3"`        | Calculator is called | Raises `ValueError("negatives not allowed: -5")`    |
 
 ---
 
